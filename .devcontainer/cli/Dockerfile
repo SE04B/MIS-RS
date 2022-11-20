@@ -3,7 +3,7 @@ FROM php:8.1-cli-alpine
 # Create a user group and account under id 1000.
 RUN addgroup -g 1000 -S user && adduser -u 1000 -D user -G user
 # Install quality-of-life packages.
-RUN apk add --no-cache bash curl git vim
+RUN apk add --no-cache bash curl git vim sudo nano
 # Install composer for php deps.
 RUN apk add --no-cache composer
 # Install postgres pdo driver.
