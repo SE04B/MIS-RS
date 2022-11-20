@@ -1,7 +1,19 @@
 # From official php image.
 FROM php:8.1-cli-alpine
 # Create a user group and account under id 1000.
-RUN addgroup -g 1000 -S user && adduser -u 1000 -D user -G user
+ENV USER=dev
+ENV UID=12345
+ENV GID=23456
+
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "$(pwd)" \
+    --ingroup "$USER" \
+    --no-create-home \
+    --uid "$UID" \
+    "$USER"
+#RUN addgroup -g 1000 -S user && adduser -u 1000 -D user -G user
 # Install quality-of-life packages.
 RUN apk add --no-cache bash curl git vim sudo nano
 # Install composer for php deps.
