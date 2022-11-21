@@ -1,3 +1,5 @@
+[![Laravel Unit Test](https://github.com/SE04B/MIS-RS/actions/workflows/laravel.yml/badge.svg?branch=master)](https://github.com/SE04B/MIS-RS/actions/workflows/laravel.yml)
+
 # sistem-informasi-rumah-sakit
 
 ## Potential Feature
