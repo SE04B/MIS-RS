@@ -44,7 +44,7 @@ Route::get('/', function () {
 */
 
 Route::get('/', function () {
-    return view('pages.Beranda');
+    return view('pages.Login');
 });
 
 //1. 
@@ -76,9 +76,9 @@ Route::get('/pasien', function () {
 });
 
 //-> Scan QR Data Pasien route fix
-Route::get('/pasienqr', function () {
+/*Route::get('/pasienqr', function () {
     return view('pages.ScanQR');
-});
+});*/
 
 //-> Edit Data Pasien route fix
 Route::get('/pasienupdate', function () {
@@ -91,9 +91,9 @@ Route::get('/pasienupdatehapus', function () {
 });
 
 //->> Generator QR Code Data Pasien route fix 
-Route::get('/pasienqrbuat', function () {
+/*Route::get('/pasienqrbuat', function () {
     return view('pages.QRGenerator');
-});
+});*/
 
 //4. 
 //Input Data Pasien route fix
@@ -122,5 +122,14 @@ Route::get('/data/{absensi}', function ($absensi) {
     return view('pages.CekAbsensi');
 });
 
+// Logout
+Route::get('/logout', function (){
+    return view('pages.Login');
+});
+
 //CONTROLLER
 Route::get('/Dashboard', [App\Http\Controllers\DashboardController::class,'index']);
+Route::get('/Mahasiswa', [App\Http\Controllers\MahasiswaController::class,'index']);
+
+Route::post('/Login', [App\Http\Controllers\DashboardController::class,'daftarsession']);
+Route::post('/misrs', [App\Http\Controllers\DashboardController::class,'hapussession']);

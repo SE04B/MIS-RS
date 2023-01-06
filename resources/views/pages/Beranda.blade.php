@@ -9,13 +9,6 @@
                         <div class="page-header">
                             <h2 class="pageheader-title">Selamat Datang</h2>
                             <p> Selamat datang di dashboard Sistem Informasi Klinik, Berikut beberapa data yang baru-baru ini diimputkan</p>
-                            <div class="page-breadcrumb">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                    </ol>
-                                </nav>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,8 +21,10 @@
     <!-- ============================================================== -->
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
-            <h5 class="card-header">Data Pasien Terbaru</h5>
-            <p>Data ini merupakan data pasien yang baru-baru ini ditangani</p>
+            <div class="card-header">
+                <h5 class="mb-0">Data Pembaruan Input Pasien</h5>
+                <p>Data pasien yang baru saja ditangani</p>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered first">
@@ -99,30 +94,32 @@
                     <table id="example" class="table table-striped table-bordered second" style="width:100%">
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Nama</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
+                                <th>Umur</th>
+                                <th>Email</th>
+                                <th>No Hp</th>
+                                <th>JK</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
+                                <td>20104056</td>
+                                <td>Farhan Ardiyanto W</td>
+                                <td>21</td>
+                                <td>20104056@ittelkom-pwt.ac.id</td>
+                                <td>0895380035206</td>
+                                <td>Laki-Laki</td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>Id</th>
+                                <th>Nama</th>
+                                <th>Umur</th>
+                                <th>Email</th>
+                                <th>No Hp</th>
+                                <th>JK</th>
                             </tr>
                         </tfoot>
                     </table>
