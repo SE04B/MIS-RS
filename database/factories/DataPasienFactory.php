@@ -24,7 +24,7 @@ class DataPasienFactory extends Factory
             'tgl_perawatan' => fake()->date(),
             'keluhan' => fake()->name(),
             'tindakan' => fake()->name(),
-            'status' => fake()->name()
+            'status' => fake()->randomElement(['Selesai', 'Pending'])
         ];
     }
 }
