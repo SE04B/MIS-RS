@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         \App\Models\DataPasien::factory(20)->create();
+        \App\Models\DataTenagaMedis::factory(20)->create();
     }
 }
