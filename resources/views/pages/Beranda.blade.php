@@ -49,15 +49,6 @@
                                 <td>Pemerikasaan general dokter, dan penanganan dengan pemberian obat pereda nyeri</td>
                                 <td>Tidak rawat inap</td>
                             </tr>
-                            <tr>
-                                <td>Nama 1</td>
-                                <td>30</td>
-                                <td>0895380035206</td>
-                                <td>13 Januari 2022</td>
-                                <td>Magh</td>
-                                <td>Pemerikasaan general dokter, dan penanganan dengan pemberian obat pereda nyeri</td>
-                                <td>Tidak rawat inap</td>
-                            </tr>
                         </tbody>
                         <tfoot>
                             <tr>

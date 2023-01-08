@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('data_pasiens', function (Blueprint $table) {
             $table->string('nama');
             $table->tinyInteger('umur');
+            $table->string('gender');
             $table->string('no_telp');
             $table->date('tgl_perawatan');
             $table->string('keluhan');
@@ -34,6 +35,7 @@ return new class extends Migration
         Schema::table('data_pasiens', function (Blueprint $table) {
             $table->dropColumn('nama');
             $table->dropColumn('umur');
+            $table->string('gender');
             $table->dropColumn('no_telp');
             $table->dropColumn('tgl_perawatan');
             $table->dropColumn('keluhan');
