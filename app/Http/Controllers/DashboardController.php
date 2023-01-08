@@ -12,4 +12,14 @@ class DashboardController extends Controller {
     public function tampil(){
         return "Data Mahasiswa";
     }
+
+    public function daftarsession(){
+        session(['Id' => 'Session Perawat']);
+        return redirect('/misrs');
+    }
+    
+    public function hapussession(){
+        session()-> flush();
+        return redirect('/');
+    }
 }
