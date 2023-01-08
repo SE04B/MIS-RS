@@ -20,6 +20,7 @@ class DataPasienFactory extends Factory
         return [
             'nama' => fake()->name(),
             'umur' => fake()->numberBetween(1,20),
+            'gender' => fake()->randomElement(['Pria', 'Wanita']),
             'no_telp' => fake()->phoneNumber(),
             'tgl_perawatan' => fake()->date(),
             'keluhan' => fake()->name(),
