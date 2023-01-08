@@ -32,7 +32,8 @@
                             <tr>
                                 <th>Nama</th>
                                 <th>Umur</th>
-                                <th>No Telepon</th>
+                                <th>Gender</th>
+                                <th>No Telp</th>
                                 <th>Tanggal Perawatan</th>
                                 <th>Keluhan</th>
                                 <th>Tindakan</th>
@@ -40,21 +41,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php $i =$data ->firstItem() ?>
+                        @foreach ($data as $item)
                             <tr>
-                                <td>Nama 1</td>
-                                <td>30</td>
-                                <td>0895380035206</td>
-                                <td>13 Januari 2022</td>
-                                <td>Magh</td>
-                                <td>Pemerikasaan general dokter, dan penanganan dengan pemberian obat pereda nyeri</td>
-                                <td>Tidak rawat inap</td>
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->umur }}</td>
+                                <td>{{ $item->gender }}</td>
+                                <td>{{ $item->no_telp }}</td>
+                                <td>{{ $item->tgl_perawatan }}</td>
+                                <td>{{ $item->keluhan }}</td>
+                                <td>{{ $item->tindakan }}</td>
+                                <td>{{ $item->status }}</td>
                             </tr>
                         </tbody>
+                        @endforeach
                         <tfoot>
                             <tr>
                                 <th>Nama</th>
                                 <th>Umur</th>
-                                <th>No Telepon</th>
+                                <th>Gender</th>
+                                <th>No Telp</th>
                                 <th>Tanggal Perawatan</th>
                                 <th>Keluhan</th>
                                 <th>Tindakan</th>
@@ -94,15 +100,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php $i =$data ->firstItem() ?>
+                        @foreach ($data as $item)
                             <tr>
-                                <td>20104056</td>
-                                <td>Farhan Ardiyanto W</td>
-                                <td>21</td>
-                                <td>20104056@ittelkom-pwt.ac.id</td>
-                                <td>0895380035206</td>
-                                <td>Laki-Laki</td>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->umur }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->no_telp }}</td>
+                                <td>{{ $item->gender}}</td>
                             </tr>
                         </tbody>
+                        @endforeach
                         <tfoot>
                             <tr>
                                 <th>Id</th>
@@ -121,10 +130,8 @@
     <!-- ============================================================== -->
     <!-- end data table  -->
     <!-- ============================================================== -->
-</div>
-{{--
-@foreach ($Mahasiswa as $val)
+    {{--
 {{$val}} <br>
-@endforeach
 --}}
+</div>
 @endsection

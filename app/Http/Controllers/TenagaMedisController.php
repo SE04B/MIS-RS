@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataPasien;
+use App\Models\DataTenagaMedis;
 use Illuminate\Http\Request;
 
-class PasienController extends Controller
+class TenagaMedisController extends Controller
 {
     public function index(Request $request)
     {
         $katakunci = $request->katakunci;
         $jumlahbaris = 5;
         if (strlen($katakunci)) {
-            $data = DataPasien::where('nama', 'like', "%$katakunci%")
+            $data = DataTenagaMedis::where('nama', 'like', "%$katakunci%")
                 ->orWhere('nama', 'like', "%$katakunci%")
                 ->orWhere('gender', 'like', "%$katakunci%")
                 ->paginate($jumlahbaris);
         } else {
-            $data = DataPasien::orderBy('id', 'desc')->paginate($jumlahbaris);
+            $data = DataTenagaMedis::orderBy('id', 'desc')->paginate($jumlahbaris);
         }
         return view('pages.Beranda')->with('data', $data);
     }
