@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PasienController;
+use App\Models\DataPasien;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -132,4 +134,6 @@ Route::get('/Dashboard', [App\Http\Controllers\DashboardController::class,'index
 Route::get('/Mahasiswa', [App\Http\Controllers\MahasiswaController::class,'index']);
 
 Route::post('/Login', [App\Http\Controllers\DashboardController::class,'daftarsession']);
-Route::post('/misrs', [App\Http\Controllers\DashboardController::class,'hapussession']);
+// Route::post('/misrs', [App\Http\Controllers\DashboardController::class,'hapussession']);
+
+Route::resource('/misrs', PasienController::class);
