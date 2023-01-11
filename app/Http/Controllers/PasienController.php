@@ -12,13 +12,13 @@ class PasienController extends Controller
         $katakunci = $request->katakunci;
         $jumlahbaris = 5;
         if (strlen($katakunci)) {
-            $data = DataPasien::where('nama', 'like', "%$katakunci%")
+            $dataPasien = DataPasien::where('nama', 'like', "%$katakunci%")
                 ->orWhere('nama', 'like', "%$katakunci%")
                 ->orWhere('gender', 'like', "%$katakunci%")
                 ->paginate($jumlahbaris);
         } else {
-            $data = DataPasien::orderBy('id', 'desc')->paginate($jumlahbaris);
+            $dataPasien = DataPasien::orderBy('id', 'desc')->paginate($jumlahbaris);
         }
-        return view('pages.Beranda')->with('data', $data);
+        return view('pages.DataPasien')->with('dataPasien', $dataPasien);
     }
 }

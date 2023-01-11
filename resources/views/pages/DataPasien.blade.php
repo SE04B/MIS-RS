@@ -58,36 +58,6 @@
                 </div>
             </div>
         </div>
-        <form action='{{ url('pasienupdate/'.$dataPasien->id) }}' method='post'>
-        @csrf 
-        @method('PUT')
-<div class="my-3 p-3 bg-body rounded shadow-sm">
-    <a href='{{ url('pasienupdate') }}' class="btn btn-secondary"><< kembali</a>
-    <div class="mb-3 row">
-        <label for="nama" class="col-sm-2 col-form-label">nama</label>
-        <div class="col-sm-10">
-            {{ $dataPasien->nama }}
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name='nama' value="{{ $dataPasien->nama }}" id="nama">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="jurusan" class="col-sm-2 col-form-label">Jurusan</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name='jurusan' value="{{ $dataPasien->jurusan }}" id="jurusan">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="jurusan" class="col-sm-2 col-form-label"></label>
-        <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">SIMPAN</button></div>
-    </div>
-</div>
-</form>
-    </div>
     <!-- ============================================================== -->
     <!-- end basic table  -->
     <!-- ============================================================== -->
