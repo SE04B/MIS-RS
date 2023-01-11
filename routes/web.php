@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardDataViewController;
+use App\Http\Controllers\DataPasienUpdate;
 use App\Http\Controllers\PasienController;
 use App\Models\DataPasien;
 use Illuminate\Support\Facades\Route;
@@ -115,7 +117,7 @@ Route::get('/administrasiupdate', function () {
 });
 
 //fallback (route yang dicari tidak ada)
-Route::fallback( function(){
+Route::fallback(function () {
     return "404 NOT FOUND";
 });
 
@@ -125,15 +127,16 @@ Route::get('/data/{absensi}', function ($absensi) {
 });
 
 // Logout
-Route::get('/logout', function (){
+Route::get('/logout', function () {
     return view('pages.Login');
 });
 
 //CONTROLLER
-Route::get('/Dashboard', [App\Http\Controllers\DashboardController::class,'index']);
-Route::get('/Mahasiswa', [App\Http\Controllers\MahasiswaController::class,'index']);
+Route::get('/Dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+Route::get('/Mahasiswa', [App\Http\Controllers\MahasiswaController::class, 'index']);
 
-Route::post('/Login', [App\Http\Controllers\DashboardController::class,'daftarsession']);
+Route::post('/Login', [App\Http\Controllers\DashboardController::class, 'daftarsession']);
 // Route::post('/misrs', [App\Http\Controllers\DashboardController::class,'hapussession']);
 
-Route::resource('/misrs', PasienController::class);
+Route::resource('/misrs', DashboardDataViewController::class);
+Route::resource('/pasien', PasienController::class);
