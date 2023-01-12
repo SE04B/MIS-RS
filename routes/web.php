@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardDataViewController;
 use App\Http\Controllers\DataPasienUpdate;
+use App\Http\Controllers\DataPasienUpdateController;
 use App\Http\Controllers\PasienController;
 use App\Models\DataPasien;
 use Illuminate\Support\Facades\Route;
@@ -140,3 +141,4 @@ Route::post('/Login', [App\Http\Controllers\DashboardController::class, 'daftars
 
 Route::resource('/misrs', DashboardDataViewController::class);
 Route::resource('/pasien', PasienController::class);
+Route::resource('/pasienupdate', DataPasienUpdateController::class);
