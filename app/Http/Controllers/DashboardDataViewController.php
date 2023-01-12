@@ -5,20 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\DataPasien;
 use Illuminate\Http\Request;
 
-class PasienController extends Controller
+class DashboardDataViewController extends Controller
 {
     public function index(Request $request)
     {
         $katakunci = $request->katakunci;
         $jumlahbaris = 5;
         if (strlen($katakunci)) {
-            $dataPasien = DataPasien::where('nama', 'like', "%$katakunci%")
+            $data = DataPasien::where('nama', 'like', "%$katakunci%")
                 ->orWhere('nama', 'like', "%$katakunci%")
                 ->orWhere('gender', 'like', "%$katakunci%")
                 ->paginate($jumlahbaris);
         } else {
-            $dataPasien = DataPasien::orderBy('id', 'desc')->paginate($jumlahbaris);
+            $data = DataPasien::orderBy('id', 'desc')->paginate($jumlahbaris);
         }
-        return view('pages.DataPasien')->with('dataPasien', $dataPasien);
+        return view('pages.Beranda')->with('data', $data);
     }
 }

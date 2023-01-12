@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\DataPasien;
 use Illuminate\Http\Request;
 
-class PasienController extends Controller
+class DataPasienUpdateController extends Controller
 {
     public function index(Request $request)
     {
         $katakunci = $request->katakunci;
-        $jumlahbaris = 5;
+        $jumlahbaris = 100;
         if (strlen($katakunci)) {
             $dataPasien = DataPasien::where('nama', 'like', "%$katakunci%")
                 ->orWhere('nama', 'like', "%$katakunci%")
@@ -19,6 +19,12 @@ class PasienController extends Controller
         } else {
             $dataPasien = DataPasien::orderBy('id', 'desc')->paginate($jumlahbaris);
         }
-        return view('pages.DataPasien')->with('dataPasien', $dataPasien);
+        return view('pages.UpdatePasien')->with('dataPasien', $dataPasien);
+    }
+
+    public function edit($id)
+    {
+        $dataPasien = DataPasien::where('id', $id)->first();
+        return view('pages.UpdatePasien')->with('dataPasien', $dataPasien);
     }
 }
