@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardDataViewController;
+use App\Http\Controllers\DataPasienCreate;
+use App\Http\Controllers\DataPasienDeleteController;
 use App\Http\Controllers\DataPasienUpdate;
 use App\Http\Controllers\DataPasienUpdateController;
 use App\Http\Controllers\PasienController;
@@ -142,3 +144,5 @@ Route::post('/Login', [App\Http\Controllers\DashboardController::class, 'daftars
 Route::resource('/misrs', DashboardDataViewController::class);
 Route::resource('/pasien', PasienController::class);
 Route::resource('/pasienupdate', DataPasienUpdateController::class);
+Route::resource('/pasienupdatehapus', DataPasienDeleteController::class);
+Route::resource('/inputpasien', DataPasienCreate::class);

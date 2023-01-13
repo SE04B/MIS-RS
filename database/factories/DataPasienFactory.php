@@ -20,12 +20,12 @@ class DataPasienFactory extends Factory
         return [
             'nama' => fake()->name(),
             'umur' => fake()->numberBetween(1,20),
-            'gender' => fake()->randomElement(['Pria', 'Wanita']),
+            'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
             'no_telp' => fake()->phoneNumber(),
             'tgl_perawatan' => fake()->date(),
             'keluhan' => fake()->name(),
             'tindakan' => fake()->name(),
-            'status' => fake()->randomElement(['Selesai', 'Pending'])
+            'status' => fake()->randomElement(['Rawat Inap', 'Tidak Rawat Inap'])
         ];
     }
 }
