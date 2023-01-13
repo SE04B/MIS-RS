@@ -25,7 +25,7 @@
                                 <th>Keluhan</th>
                                 <th>Tindakan</th>
                                 <th>Status</th>
-                                <th>Edit</th>
+                                <th>Remove Data</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +41,11 @@
                                 <td>{{ $item->tindakan }}</td>
                                 <td>{{ $item->status }}</td>
                                 <td>
-                                    <a href='{{ url('pasienupdate/'.$item->id.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
+                                    <form class="d-inline" action="{{ url('pasienupdatehapus/'.$item->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         </tbody>
@@ -56,7 +60,7 @@
                                 <th>Keluhan</th>
                                 <th>Tindakan</th>
                                 <th>Status</th>
-                                <th>Edit</th>
+                                <th>Remove Data</th>
                             </tr>
                         </tfoot>
                     </table>
