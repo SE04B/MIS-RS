@@ -24,7 +24,26 @@ class DataPasienUpdateController extends Controller
 
     public function edit($id)
     {
+        // return 'Hello Blyat';
         $dataPasien = DataPasien::where('id', $id)->first();
-        return view('pages.UpdatePasien')->with('dataPasien', $dataPasien);
+        return view('pages.EditPasien')->with('dataPasien', $dataPasien);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'no_telp' => 'required',
+        ], [
+            'nama.required' => 'Nama wajib diisi',
+            'no_telp.required' => 'Telp wajib diisi',
+        ]);
+        $dataPasien = [
+            'nama' => $request->nama,
+            'no_telp' => $request->no_telp,
+        ];
+        DataPasien::where('id', $id)->update($dataPasien);
+        return redirect()->to('pages.pasienupdate')->with('success', 'Berhasil melakukan update data');
     }
 }
+ 

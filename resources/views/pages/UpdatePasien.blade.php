@@ -41,7 +41,7 @@
                                 <td>{{ $item->tindakan }}</td>
                                 <td>{{ $item->status }}</td>
                                 <td>
-                                    <a href='{{ url('pasienupdate/'.$item->id.'/pasienupdate') }}' class="btn btn-warning btn-sm">Edit</a>
+                                    <a href='{{ url('pasienupdate/'.$item->id.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
                                 </td>
                             </tr>
                         </tbody>

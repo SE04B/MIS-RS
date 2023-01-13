@@ -21,7 +21,7 @@ class DataTenagaMedisFactory extends Factory
             'umur' => fake() -> numberBetween(17, 40),
             'email' => fake() -> email(),
             'no_telp' => fake() -> phoneNumber(),
-            'gender' => fake()->randomElement(['Pria','Wanita'])
+            'gender' => fake()->randomElement(['Laki-Laki','Perempuan'])
         ];
     }
 }
