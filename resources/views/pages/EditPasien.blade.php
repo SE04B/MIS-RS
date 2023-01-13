@@ -64,7 +64,7 @@
         </div>
     </div>
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-        <label for="validationCustom01">Tindakan</label>
+        <label for="validationCustom01">Status</label>
         <div class="col-sm-6">
             <div class="custom-controls-stacked">
                 {{ $status=$dataPasien->status }}
