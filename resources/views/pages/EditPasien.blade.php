@@ -63,12 +63,19 @@
             <input type="text" class="form-control" name='tindakan' value="{{ $dataPasien->tindakan }}" id="tindakan">
         </div>
     </div>
-    <div class="mb-3 row">
-        <label for="status" class="col-sm-2 col-form-label">status</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name='status' value="{{ $dataPasien->status }}" id="status">
-        </div>
-    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+        <label for="validationCustom01">Tindakan</label>
+        <div class="col-sm-6">
+            <div class="custom-controls-stacked">
+                {{ $status=$dataPasien->status }}
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="status1" name="status" value="Tidak Rawat Inap" class="custom-control-input" @if ($status == "Tidak Rawat Inap") checked @endif>
+                    <label class="custom-control-label" for="gender1">Tidak Rawat Inap</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="status2" name="status" value="Rawat Inap" class="custom-control-input" @if ($status == "Rawat Inap") checked @endif>
+                    <label class="custom-control-label" for="gender2">Rawat Inap</label>
+                </div>
     <div class="mb-3 row">
         <label for="" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">SIMPAN</button></div>
