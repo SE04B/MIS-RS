@@ -33,17 +33,36 @@ class DataPasienUpdateController extends Controller
     {
         $request->validate([
             'nama' => 'required',
+            'umur' => 'required',
+            'gender' => 'required',
             'no_telp' => 'required',
+            'tgl_perawatan' => 'required',
+            'keluhan' => 'required',
+            'tindakan' => 'required',
+            'status' => 'required',
         ], [
             'nama.required' => 'Nama wajib diisi',
+            'umur.required' => 'Umur harus di isi',
+            'gender.required' => 'Gender Harus di isi',
             'no_telp.required' => 'Telp wajib diisi',
+            'tgl_perawatan' => 'Tanggal Perawatan harus di isi',
+            'keluhan' => 'Keluhan harus di isi',
+            'tindakan' => 'Tindakan harus di isi',
+            'status' => 'Status harus di isi',
+            
         ]);
         $dataPasien = [
             'nama' => $request->nama,
+            'umur' => $request->umur,
+            'gender' => $request->gender,
             'no_telp' => $request->no_telp,
+            'tgl_perawatan' => $request->tgl_perawatan,
+            'keluhan' => $request->keluhan,
+            'tindakan' => $request->tindakan,
+            'status' => $request->status,
         ];
         DataPasien::where('id', $id)->update($dataPasien);
-        return redirect()->to('pages.pasienupdate')->with('success', 'Berhasil melakukan update data');
+        return redirect()->to('pasienupdate')->with('success', 'Berhasil melakukan update data');
     }
 }
  
