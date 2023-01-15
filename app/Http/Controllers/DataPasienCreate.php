@@ -22,9 +22,13 @@ class DataPasienCreate extends Controller
         return view('pages.InputDataPasien')->with('dataPasien', $dataPasien);
     }
 
+    public function create(){
+        return view('pages.InputDataPasien');
+    }
+
     public function store(Request $request){
         // return 'Hello store';
-        Session::flash('nama', $request->nama);
+        // Session::flash('nama', $request->nama);
         // Session::flash('nama', $request->nama);
         // Session::flash('jurusan', $request->jurusan);
 
