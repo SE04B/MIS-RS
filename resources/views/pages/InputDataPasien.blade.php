@@ -1,7 +1,9 @@
 @extends('pages.template')
 
 @section('content')
-
+@if(Session::has('success'))
+    {{Session::get('success')}}
+@endif
 <form action="{{ url('inputpasien') }}" method="post">
     @csrf
     <div class="row">
@@ -48,7 +50,7 @@
                         <div class="form-group row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 <label for="validationCustom01">No Telp</label>
-                                <input type="text" class="form-control" id="validationCustom01" placeholder="Nomor Telepon" value="{{ Session::get('no_telp') }}" required>
+                                <input type="text" class="form-control" id="validationCustom01" placeholder="Nomor Telepon" name="no_telp" value="{{ Session::get('no_telp') }}" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -57,7 +59,7 @@
                         <div class="form-group row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 <label for="validationCustom01">Tanggal Perawatan</label>
-                                <input name="tgl_perawatan" type="text" class="form-control" id="tgl_perawatan" placeholder="Tanggal Perawatan" value="{{ Session::get('tgl_perawatan') }}" required>
+                                <input name="tgl_perawatan" type="date" class="form-control" id="tgl_perawatan" placeholder="Tanggal Perawatan" value="{{ Session::get('tgl_perawatan') ? Session::get('tgl_perawatan') : date('Y-m-d')  }}" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -82,11 +84,11 @@
                                     {{ $status=Session::get('status') }}
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="status1" name="status" value="Tidak Rawat Inap" class="custom-control-input" @if ($status == "Tidak Rawat Inap") checked @endif>
-                                        <label class="custom-control-label" for="gender1">Tidak Rawat Inap</label>
+                                        <label class="custom-control-label" for="status1">Tidak Rawat Inap</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="status2" name="status" value="Rawat Inap" class="custom-control-input" @if ($status == "Rawat Inap") checked @endif>
-                                        <label class="custom-control-label" for="gender2">Rawat Inap</label>
+                                        <label class="custom-control-label" for="status2">Rawat Inap</label>
                                     </div>                
                         <div class="form-group row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
