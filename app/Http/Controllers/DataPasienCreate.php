@@ -41,15 +41,9 @@ class DataPasienCreate extends Controller
             'keluhan' => 'required',
             'tindakan' => 'required',
             'status' => 'required',
-        ], [
-            'nama.required' => 'nama wajib diisi',
-            // 'nim.numeric' => 'NIM wajib dalam angka',
-            // 'nim.unique' => 'NIM yang diisikan sudah ada dalam database',
-            // 'nama.required' => 'Nama wajib diisi',
-            // 'jurusan.required' => 'Jurusan wajib diisi',
         ]);
         $dataPasien = [
-            'nama' => $request->nim,
+            'nama' => $request->nama,
             'umur' => $request->umur,
             'gender' => $request->gender,
             'no_telp' => $request->no_telp,
@@ -58,7 +52,11 @@ class DataPasienCreate extends Controller
             'tindakan' => $request->tindakan,
             'status' => $request->status,
         ];
-        DataPasien::create($dataPasien);
-        return redirect()->to('inputpasien')->with('success', 'Berhasil menambahkan data');
+        $store = DataPasien::create($dataPasien);
+        if($store)
+        {
+            return redirect()->back()->with('success', 'Berhasil menambahkan data');
+        }
+        return abort(500);
     }
 }
